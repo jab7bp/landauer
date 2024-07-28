@@ -136,7 +136,7 @@ void analyze(const vector<double>& oldCoefficients, double percent_data_to_scan 
 
     grInitial->SetMarkerStyle(21);
     grInitial->SetMarkerColor(kRed);
-    grInitial->SetTitle("Initial vs Nominal SDE;Nominal SDE;Initial Predicted SDE");
+    grInitial->SetTitle(Form("Low Energy Beta: SDE vs Measurement Entry (%0.0f%%);Measurement Entry;Low Energy Beta SDE", percent_data_to_scan));
     grInitial->GetYaxis()->SetRangeUser(0.95*graph_min, 1.05*graph_max);
     grInitial->Draw("AP");
 

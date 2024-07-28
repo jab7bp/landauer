@@ -67,6 +67,7 @@ void analyze(const vector<double>& oldCoefficients, double percent_data_to_scan 
 
     vector<double> OW, PL, Al, Cu, SDE;
     loadData("bh_sde_data.csv", OW, PL, Al, Cu, SDE, percent_data_to_scan);
+    // loadData("bh_sde_data_mod.csv", OW, PL, Al, Cu, SDE, percent_data_to_scan);
 
     int n = OW.size();
     if (n == 0) {
@@ -141,7 +142,7 @@ void analyze(const vector<double>& oldCoefficients, double percent_data_to_scan 
 
     grInitial->SetMarkerStyle(21);
     grInitial->SetMarkerColor(kRed);
-    grInitial->SetTitle("Initial vs Nominal SDE;Nominal SDE;Initial Predicted SDE");
+    grInitial->SetTitle(Form("High Energy Beta: SDE vs Measurement Entry (%0.0f%%);Measurement Entry;High Energy Beta SDE", percent_data_to_scan));
     grInitial->GetYaxis()->SetRangeUser(0.95*graph_min, 1.05*graph_max);
     grInitial->Draw("AP");
 
